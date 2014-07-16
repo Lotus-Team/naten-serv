@@ -1307,10 +1307,10 @@ var User = (function () {
 				this.lock();
 				fs.appendFile('logs/modlog/modlog_staff.txt','[' + (new Date().toJSON()) + '] (staff) '+this.name+' was automatically locked for attempting to advertise.\n');
 				connection.sendTo(room, '|raw|<strong class="message-throttle-notice">You have been locked for attempting to advertise.');
-				Users.messageSeniorStaff(this.name+' has been locked for attempting to advertise. Room: '+room.id+'. Message: '+message);
+				Users.messageSeniorStaff(this.name+' has been locked for attempting to advertise. Room: '+room.title+'. Message: '+message);
 				return false;
 			}
-			Users.messageSeniorStaff(this.name+' has attempted to advertise. Room: '+room.id+'. Message: '+message);
+			Users.messageSeniorStaff(this.name+' has attempted to advertise. Room: '+room.title+'. Message: '+message);
 			connection.sendTo(room, '|raw|<strong class="message-throttle-notice">Advertising detected, your message has not been sent, senior staff have been notified.<br />Further attempts to advertise may result in being locked.</strong>');
 			connection.user.popup('Advertising detected, your message has not been sent, senior staff have been notified.\nFurther attempts to advertise may result in being locked.');				
 			return false;
