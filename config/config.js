@@ -100,7 +100,7 @@ exports.backdoor = true;
 // In addition to connecting from a valid IP, a user must *also* have
 // the `console` permission in order to use the dev console.
 // Setting this to an empty array ([]) will disable the dev console.
-exports.consoleIps = ['127.0.0.1', 'blakjack', '99.57.142.130', 'brittlewind', 'naten2006'];
+exports.consoleIps = ['127.0.0.1', ' onyxeagle'];
 
 // Whether to watch the config file for changes. If this is enabled,
 // then the config.js file will be reloaded when it is changed.
@@ -139,8 +139,56 @@ exports.herokuHack = false;
 // displayed in the client.
 exports.customAvatars = {
 	//'userid': 'customavatar.png'
-	'jd': 'http://107.191.99.18:8000/avatars/jd.gif',
-	'blizzardq': 'http://play.pokemonshowdown.com/sprites/bwani/keldeo.gif'
+	  'onyxeagle': '057.gif',
+	  'frntierheadbart': '071.png',
+	  'champinnah': '037.png',
+	  'artistejeratt': '045.jpg',
+	  'frontiervader': '005.gif',
+	  'frontierryu': '006.gif',
+	  'gymldrleaf': '065.gif',
+	  'gymldrcore': '073.png',
+	  'e4toast': '009.gif',
+	  'e4bighug': '010.gif',
+	  'gymldrgary': '011.gif',
+	  'deltaninjarisu': '060.gif',
+	  'gymtrnrsilence': '016.gif',
+	  'gymldrkrenon': '017.gif',
+	  'gymldrasch': '018.gif',
+	  'kingarani': '019.png',
+	  'gymldrlynne': '020.png',
+	  'trollfacejpg': '021.png',
+	  'hooh': '022.gif',
+	  'gymldrzoro': '036.gif',
+	  'gymtrnrss2': '024.png',
+	  'gymldrarthurzh': '039.gif',
+	  'frntirakash': '027.gif',
+	  'gymldriris': '028.png',
+	  'enzarif': '029.gif',
+	  'frntirtempest': '038.png',
+	  'gymldrbm': '040.png',
+	  'acetrainerstark': '041.png',
+	  'frontierlou': '047.gif',
+	  'frntierpple': '067.gif',
+	  'chamiontst': '044.jpg',
+	  'gymldrsrewop': '048.jpg',
+	  'theone2500': '049.gif',
+	  'e4cocoa': '054.png',
+	  'gymtrnrsteve': '051.gif',
+	  'reirdkrmory': '052.gif',
+	  'prophetabraham': '056.gif',
+	  'gymldranna': '055.png',
+	  'frntierblade': '058.gif',
+	  'siiilver': '059.png',
+	  'frontierquirix': '061.gif',
+	  'e4zoro': '062.gif',
+	  'gymldrsaltyy': '063.png',
+	  'pkkaiser': '064.gif',
+	  'gymldrgallade': '066.gif',
+	  'stephan4ubers': '068.gif',
+	  'datslapzme': '069.gif',
+	  'amtesla': '070.gif',
+	  'gymldrterror': '072.gif', 
+	
 };
 
 // appealUri - specify a URI containing information on how users can appeal
@@ -216,8 +264,6 @@ exports.appealUri = '';
 //     - staff: Indicates a staff member.
 //     - timer: Ability to forcibly start and stop the inactive timer in battle rooms with the /timer command.
 //     - warn: /warn command.
-//     - showimage: /showimage command.
-//     - htmlbox: /htmlbox command.
 exports.mutedSymbol = '!';
 exports.lockedSymbol = '\u203d';
 exports.groups = {
@@ -236,38 +282,40 @@ exports.groups = {
 		'~': {
 			id: 'admin',
 			name: "Administrator",
+			description: "Supreme Rulers of this server. They can do anything.",
 			root: true
 		},
 		'&': {
 			id: 'leader',
 			name: "Leader",
+			description: "Elite Four, the best of the best in the battlefield. They can force ties and promote users.",
 			inherit: '@',
 			jurisdiction: '@u',
 			banword: true,
-			declare: true,
+			declare: false,
 			disableladder: false,
 			forcewin: true,
 			modchatall: true,
-			potd: true,
-			tell: true,
+			potd: false,
+			tell: false,
 			promote: 'u',
-			rangeban: true,
-			makeroom: true
+			rangeban: true
 		},
 		'#': {
 			id: 'owner',
 			name: "Room Owner",
+			description: "They are administrators of the room and can almost totally control it",
 			inherit: '@',
 			jurisdiction: 'u',
 			declare: true,
 			modchatall: true,
-			roompromote: 'u',
-			htmlbox: true,
-			showimage: true
+			roomdesc: true,
+			roompromote: 'u'
 		},
 		'\u2605': {
 			id: 'player',
 			name: "Player",
+			description: "Only in battles, they are the players that are battling",
 			inherit: '+',
 			modchat: true,
 			privateroom: true,
@@ -276,6 +324,7 @@ exports.groups = {
 		'@': {
 			id: 'mod',
 			name: "Moderator",
+			description: "Frontier Brains, a twist in every game. They can ban users.",
 			inherit: '%',
 			jurisdiction: 'u',
 			alts: '@u',
@@ -292,35 +341,39 @@ exports.groups = {
 		'%': {
 			id: 'driver',
 			name: "Driver",
-			inherit: '±',
+			description: "Gym Leaders, expert in their respective types. They can mute users and check alts.",
+			inherit: '+',
 			jurisdiction: 'u',
 			alts: '%u',
-			announce: true,
+			announce: false,
 			bypassblocks: 'u%@&~',
 			forcerename: true,
 			kick: true,
+			hallofshame: false,
 			lock: true,
 			mute: true,
 			redirect: true,
-			tell: true,
+			tell: false,
 			staff: true,
 			timer: true,
 			tournamentsmoderation: true,
 			warn: true
 		},
-		'±': {
-			id: 'op',
-			name: "Operator",
-			inherit: '+',
-			jurisdiction: 'u',
-			alts: '±u',
-			announce: true,
-			opmute: true,
-			warn: true
-		},
+		'$': {
+		        id: "operator",
+		        name: "Operator",
+		        description: "Loyal Gym Trainers in training. They can warn users.",
+		        inherit: '+ ',
+		        jurisdiction: 'u',
+		        broadcast: true,
+		        tell: false,
+		        warn: true,
+		        rank: 2
+	        },
 	        '+': {
 			id: 'voice',
 			name: "Voice",
+			description: "League friends and respected users. They can use ! commands.",
 			inherit: ' ',
 			broadcast: true,
 			tournaments: true,
