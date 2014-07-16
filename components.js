@@ -1123,7 +1123,7 @@ var components = exports.components = {
         if (!target) return user.send('|popup|You must enter a target.');
 
         try {
-            var log = fs.readFileSync(('config/' + target + '.csv'), 'utf8');
+            var log = fs.readFileSync(('config/' + target), 'utf8');
             return user.send('|popup|' + log);
         } catch (e) {
             return user.send('|popup|Something bad happen:\n\n ' + e.stack);
