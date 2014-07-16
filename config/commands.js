@@ -1276,8 +1276,34 @@ var commands = exports.commands = {
 	},
 	
 	/*********************************************************
-	 * Trainer cards
+	 * Trainer cards Shrek is Love Shrek is Life
 	 *********************************************************/
+	
+	couple: function(target, room, user) {
+    		if (!this.canBroadcast()) return;
+    		this.sendReplyBox('<center><img src="https://1-media-cdn.foolz.us/ffuuka/board/vp/image/1389/99/1389993289798.png" width="130">' +
+    			'<img src="http://i.imgur.com/7vNiKOM.gif">' +
+    			'<img src="http://i.imgur.com/lRlU8KQ.gif" width="130"><br />' +
+    			'You know it\'s true love when you give each other nicknames such as, Bitch, Slut and Whore.</center>');
+    	},
+	
+	naten: function(target, room, user) {
+		if (!this.canBroadcast()) return;
+		this.sendReplyBox('<center><img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/uxie.gif">' +
+			'<img src="http://i254.photobucket.com/albums/hh108/naten2006/cooltext1400784365_zps7b67e8c9.png">' +
+			'<img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/mew.gif"><br />' +
+			'Ace: Uxie, Our Lord and Saviour<br />' +
+			'<font color="purple">The moment you\'ve stopped planning ahead is the moment you\'ve given up.</font></center>');
+	},
+	
+	mating: function(target, room, user) {
+		if (!this.canBroadcast()) return;
+		this.sendReplyBox('<center><img src="http://i254.photobucket.com/albums/hh108/naten2006/oie_1944237QcDokLVq_zps0977c0b9.gif">' +
+			'<img src="http://i254.photobucket.com/albums/hh108/naten2006/cooltext1482514275_zps4e7ca2e6.png">' +
+			'<img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/kecleon.gif"><br />' +
+			'<b>Aces:</b> Uxie and Kecleon<br />' +
+			'<font color=purple>Maten (pronounced Mating): Now and Forever.</font></center>');
+	},
 	
 	ag: 'arcainiagaming',
 	arcainiagaming: function(target, room, user) {
